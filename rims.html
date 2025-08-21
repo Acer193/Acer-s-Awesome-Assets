@@ -4,61 +4,92 @@
   <meta charset="UTF-8">
   <title>Vehicles - Rims</title>
   <style>
+    /* General body */
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       display: flex;
+      background: #f4f4f4;
     }
+
     /* Sidebar */
     .sidebar {
-      width: 200px;
-      background: #222;
+      width: 220px;
+      background: linear-gradient(to bottom, #1f1f1f, #111);
       color: #fff;
       height: 100vh;
-      padding: 20px 0;
+      padding-top: 20px;
       position: fixed;
     }
+
     .sidebar ul {
       list-style: none;
       padding: 0;
     }
+
     .sidebar li {
       margin: 15px 0;
     }
+
     .sidebar a {
       color: #fff;
       text-decoration: none;
-      padding: 8px 16px;
+      padding: 12px 20px;
       display: block;
+      border-left: 4px solid transparent;
+      transition: all 0.3s;
+      font-weight: 500;
     }
+
     .sidebar a:hover, .sidebar a.active {
-      background: #444;
-      border-radius: 4px;
+      background: #333;
+      border-left: 4px solid #ff9900;
+      border-radius: 4px 0 0 4px;
     }
-    /* Content */
+
+    /* Main content */
     .content {
       margin-left: 220px;
-      padding: 20px;
+      padding: 30px 40px;
       flex: 1;
     }
+
+    .content h1 {
+      font-size: 2.2em;
+      margin-bottom: 30px;
+      color: #222;
+    }
+
+    /* Gallery */
     .gallery {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 20px;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 25px;
     }
+
     .gallery a {
       text-align: center;
       text-decoration: none;
       color: black;
     }
+
     .gallery img {
       max-width: 100%;
-      border-radius: 8px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      transition: transform 0.3s, box-shadow 0.3s;
     }
+
+    .gallery img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+    }
+
     .gallery p {
-      margin-top: 8px;
+      margin-top: 10px;
       font-weight: bold;
+      font-size: 1.1em;
+      color: #333;
     }
   </style>
 </head>
