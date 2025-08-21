@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Vehicles - My 3D Assets</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f4f4f4;
+      display: flex;
+      height: 100vh;
+    }
+
+    aside {
+      width: 220px;
+      background: #111;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      padding-top: 20px;
+    }
+
+    aside h3 {
+      margin-left: 20px;
+      font-size: 1.2em;
+      border-bottom: 1px solid #444;
+      padding-bottom: 5px;
+    }
+
+    aside ul {
+      list-style: none;
+      padding: 0;
+      margin: 10px 0;
+    }
+
+    aside ul li {
+      padding: 10px 20px;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    aside ul li:hover {
+      background: #222;
+    }
+
+    aside ul li a {
+      color: #fff;
+      text-decoration: none;
+      display: block;
+    }
+
+    main {
+      flex: 1;
+      padding: 40px;
+      overflow-y: auto;
+    }
+
+    main h2 {
+      font-size: 2em;
+      margin-bottom: 20px;
+      color: #222;
+    }
+
+    .section {
+      margin-bottom: 50px;
+    }
+
+    .subsection {
+      margin-top: 20px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 20px;
+    }
+
+    .grid a {
+      display: block;
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+      text-decoration: none;
+      color: #111;
+      font-weight: bold;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .grid a:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    }
+  </style>
+</head>
+<body>
+  <aside>
+    <h3>Complete Vehicles</h3>
+    <ul>
+      <li><a href="#toyota">Toyota</a></li>
+      <li><a href="#porsche">Porsche</a></li>
+      <li><a href="#ferrari">Ferrari</a></li>
+      <!-- add more manufacturers as needed -->
+    </ul>
+
+    <h3>Vehicle Accessories</h3>
+    <ul>
+      <li><a href="#rims">Rims</a></li>
+      <li><a href="#tyres">Tyres</a></li>
+      <li><a href="#spoilers">Spoilers</a></li>
+      <li><a href="#mirrors">Mirrors</a></li>
+      <li><a href="#lights">Lights</a></li>
+      <li><a href="#exhausts">Exhausts</a></li>
+      <li><a href="#interior">Interior Parts</a></li>
+    </ul>
+  </aside>
+
+  <main>
+    <div class="section" id="complete-vehicles">
+      <h2>Complete Vehicles</h2>
+
+      <div class="subsection" id="toyota">
+        <h3>Toyota</h3>
+        <div class="grid">
+          <!-- Example thumbnails -->
+          <a href="#">Supra MK4</a>
+          <a href="#">GR Yaris</a>
+        </div>
+      </div>
+
+      <div class="subsection" id="porsche">
+        <h3>Porsche</h3>
+        <div class="grid">
+          <a href="#">911 991 RS Spyder</a>
+          <a href="#">Cayman GT4</a>
+        </div>
+      </div>
+
+      <div class="subsection" id="ferrari">
+        <h3>Ferrari</h3>
+        <div class="grid">
+          <a href="#">488 Pista</a>
+          <a href="#">SF90 Stradale</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="section" id="vehicle-accessories">
+      <h2>Vehicle Accessories</h2>
+
+      <div class="subsection" id="rims">
+        <h3>Rims</h3>
+        <div class="grid">
+          <a href="rims.html#RPF_01">RPF 01</a>
+          <a href="rims.html#Porsche_911">Porsche 911</a>
+        </div>
+      </div>
+
+      <div class="subsection" id="tyres">
+        <h3>Tyres</h3>
+        <div class="grid">
+          <a href="#">Tyre 1</a>
+          <a href="#">Tyre 2</a>
+        </div>
+      </div>
+
+      <div class="subsection" id="spoilers">
+        <h3>Spoilers</h3>
+        <div class="grid">
+          <a href="#">Spoiler 1</a>
+          <a href="#">Spoiler 2</a>
+        </div>
+      </div>
+
+      <div class="subsection" id="mirrors">
+        <h3>Mirrors</h3>
+        <div class="grid">
+          <a href="#">Mirror 1</a>
+          <a href="#">Mirror 2</a>
+        </div>
+      </div>
+
+      <div class="subsection" id="lights">
+        <h3>Lights</h3>
+        <div class="grid">
+          <a href="#">Headlight 1</a>
+          <a href="#">Taillight 1</a>
+        </div>
+      </div>
+
+      <div class="subsection" id="exhausts">
+        <h3>Exhausts</h3>
+        <div class="grid">
+          <a href="#">Exhaust 1</a>
+          <a href="#">Exhaust 2</a>
+        </div>
+      </div>
+
+      <div class="subsection" id="interior">
+        <h3>Interior Parts</h3>
+        <div class="grid">
+          <a href="#">Steering Wheel</a>
+          <a href="#">Seats</a>
+        </div>
+      </div>
+    </div>
+  </main>
+</body>
+</html>
