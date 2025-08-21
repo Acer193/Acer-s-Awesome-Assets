@@ -63,11 +63,11 @@
     }
 
     .section.complete-vehicles {
-      background: #dfe6e9; /* light background for distinction */
+      background: #dfe6e9;
     }
 
     .section.vehicle-accessories {
-      background: #b2bec3; /* darker background for distinction */
+      background: #b2bec3;
     }
 
     .section h2 {
@@ -96,7 +96,7 @@
     .grid a {
       display: block;
       background: #fff;
-      padding: 20px;
+      padding: 10px;
       border-radius: 10px;
       text-align: center;
       text-decoration: none;
@@ -106,9 +106,25 @@
       transition: transform 0.3s, box-shadow 0.3s;
     }
 
+    .grid a img {
+      width: 100%;
+      border-radius: 8px;
+      transition: transform 0.3s;
+    }
+
+    .grid a span {
+      display: block;
+      margin-top: 8px;
+      font-size: 0.9em;
+    }
+
     .grid a:hover {
       transform: translateY(-5px);
       box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    }
+
+    .grid a:hover img {
+      transform: scale(1.05);
     }
   </style>
 </head>
@@ -119,7 +135,6 @@
       <li><a href="#toyota">Toyota</a></li>
       <li><a href="#porsche">Porsche</a></li>
       <li><a href="#ferrari">Ferrari</a></li>
-      <!-- more manufacturers can be added -->
     </ul>
 
     <h3>Vehicle Accessories</h3>
@@ -156,6 +171,16 @@
 
       <div class="subsection" id="rims">
         <h3>Rims</h3>
+        <div class="grid">
+          <a href="https://www.cgtrader.com/your-rpf-link" target="_blank">
+            <img src="assets/rims/RPF_01.png" alt="RPF 01 Rim">
+            <span>RPF 01</span>
+          </a>
+          <a href="https://www.cgtrader.com/your-porsche-link" target="_blank">
+            <img src="assets/rims/Porsche_911.png" alt="Porsche 911 Rim">
+            <span>Porsche 911</span>
+          </a>
+        </div>
       </div>
 
       <div class="subsection" id="tyres">
