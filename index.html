@@ -1,11 +1,100 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8">
-    <title>My Website</title>
-  </head>
-  <body>
-    <h1>Hello, world! 👋</h1>
-    <p>This is my very first GitHub Pages website.</p>
-  </body>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My 3D Assets</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f4f4f4;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    header {
+      background: #111;
+      color: #fff;
+      padding: 20px 40px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.5em;
+    }
+
+    header p {
+      margin: 5px 0 0;
+      font-size: 1.2em;
+      color: #ccc;
+    }
+
+    main {
+      flex: 1;
+      padding: 50px 40px;
+      text-align: center;
+    }
+
+    main h2 {
+      font-size: 2em;
+      margin-bottom: 40px;
+      color: #222;
+    }
+
+    .category-links {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 40px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .category-links a {
+      display: block;
+      background: #fff;
+      padding: 40px 20px;
+      border-radius: 12px;
+      text-decoration: none;
+      color: #111;
+      font-weight: bold;
+      font-size: 1.3em;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+    }
+
+    .category-links a:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+      background: #ffefcc;
+    }
+
+    footer {
+      background: #111;
+      color: #ccc;
+      text-align: center;
+      padding: 15px;
+      font-size: 0.9em;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>My 3D Assets</h1>
+    <p>Showcasing vehicles, military models, and more</p>
+  </header>
+
+  <main>
+    <h2>Choose a Category</h2>
+    <div class="category-links">
+      <a href="vehicles.html">Vehicles</a>
+      <a href="military.html">Military</a>
+    </div>
+  </main>
+
+  <footer>
+    &copy; 2025 My 3D Assets. All rights reserved.
+  </footer>
+</body>
 </html>
