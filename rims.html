@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Vehicles - Rims</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      display: flex;
+    }
+    /* Sidebar */
+    .sidebar {
+      width: 200px;
+      background: #222;
+      color: #fff;
+      height: 100vh;
+      padding: 20px 0;
+      position: fixed;
+    }
+    .sidebar ul {
+      list-style: none;
+      padding: 0;
+    }
+    .sidebar li {
+      margin: 15px 0;
+    }
+    .sidebar a {
+      color: #fff;
+      text-decoration: none;
+      padding: 8px 16px;
+      display: block;
+    }
+    .sidebar a:hover, .sidebar a.active {
+      background: #444;
+      border-radius: 4px;
+    }
+    /* Content */
+    .content {
+      margin-left: 220px;
+      padding: 20px;
+      flex: 1;
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+    }
+    .gallery a {
+      text-align: center;
+      text-decoration: none;
+      color: black;
+    }
+    .gallery img {
+      max-width: 100%;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    }
+    .gallery p {
+      margin-top: 8px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <!-- Sidebar -->
+  <nav class="sidebar">
+    <ul>
+      <li><a href="tyres.html">Tyres</a></li>
+      <li><a href="rims.html" class="active">Rims</a></li>
+      <li><a href="spoilers.html">Spoilers</a></li>
+    </ul>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="content">
+    <h1>Rims</h1>
+    <div class="gallery">
+      <a href="https://www.cgtrader.com/your-link-for-rpf01" target="_blank">
+        <img src="assets/rims/RPF_01.png" alt="RPF 01 Rim">
+        <p>RPF 01</p>
+      </a>
+      <a href="https://www.cgtrader.com/your-link-for-porsche911" target="_blank">
+        <img src="assets/rims/Porsche_911.png" alt="Porsche 911 991 RS Spyder Rim">
+        <p>Porsche 911 991 RS Spyder</p>
+      </a>
+    </div>
+  </main>
+</body>
+</html>
