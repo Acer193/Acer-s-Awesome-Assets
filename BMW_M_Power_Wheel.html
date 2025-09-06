@@ -2,173 +2,198 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>BMW M Power Steering Wheel - 3D Asset</title>
+  <title>BMW M Power Steering Wheel</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
   <style>
-    body {
-      font-family: 'Segoe UI', sans-serif;
+    body, html {
       margin: 0;
-      padding: 40px;
-      background: #f9f9f9;
-      color: #222;
+      padding: 0;
+      font-family: 'Roboto', sans-serif;
+      overflow-x: hidden;
+    }
+
+    /* Header */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px;
+      background: linear-gradient(to right, #8B0000, #4B0000);
+      color: white;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    header .back-btn, header .home-btn {
+      cursor: pointer;
+      text-decoration: none;
+      color: white;
+      font-weight: 500;
+      font-size: 1em;
+      padding: 8px 15px;
+      border-radius: 6px;
+      transition: background 0.3s;
+    }
+    header .back-btn:hover, header .home-btn:hover {
+      background: rgba(255,255,255,0.1);
+    }
+    header h1 {
+      margin: 0;
+      font-size: 1.5em;
       text-align: center;
+      flex: 1;
     }
 
-    h1 {
-      margin-bottom: 20px;
-      font-weight: 600;
-    }
-
+    /* Gallery */
     .gallery {
       display: flex;
-      justify-content: center;
-      gap: 20px;
-      flex-wrap: wrap;
-      margin-bottom: 30px;
-    }
-
-    .gallery img {
-      max-width: 300px;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-      transition: transform 0.2s;
-    }
-
-    .gallery img:hover {
-      transform: scale(1.05);
-    }
-
-    .description {
-      max-width: 800px;
-      margin: 0 auto 30px;
-      font-size: 1.1em;
-      line-height: 1.6;
-      text-align: left;
-    }
-
-    .viewer-container {
-      max-width: 600px;
-      margin: 0 auto 40px;
-      position: relative;
-      display: none;
-    }
-
-    .viewer-container img {
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
       width: 100%;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-      user-select: none;
+    }
+    .gallery img {
+      width: 100%;
+      min-width: 100%;
+      height: auto;
+      object-fit: cover;
+      scroll-snap-align: start;
+      transition: transform 0.3s;
     }
 
-    .price {
-      font-size: 1.5em;
-      color: #721c24;
-      margin: 20px 0;
+    /* Description Section */
+    .description {
+      max-width: 900px;
+      margin: 60px auto;
+      padding: 0 20px;
+      font-weight: 300;
+      font-size: 1.1em;
+      line-height: 1.7em;
+      position: relative;
+    }
+    .description img.logo {
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 100px;
+      opacity: 0.2;
     }
 
+    /* Slide-in effect */
+    .slide-in {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    }
+    .slide-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Buy Button */
     .buy-btn {
-      display: inline-block;
+      display: block;
+      margin: 80px auto 40px auto;
+      padding: 18px 60px;
       background: #c0392b;
       color: white;
-      padding: 12px 28px;
-      border-radius: 8px;
-      font-size: 1.1em;
+      font-size: 1.2em;
+      font-weight: 500;
+      text-align: center;
       text-decoration: none;
-      transition: background 0.3s;
-      font-weight: 600;
+      border-radius: 12px;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.4s ease;
+      cursor: pointer;
+      border: 2px solid #c0392b;
+    }
+    .buy-btn span {
+      position: relative;
+      z-index: 2;
+      transition: all 0.4s ease;
+    }
+    .buy-btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: white;
+      transition: all 0.4s ease;
+      z-index: 1;
+    }
+    .buy-btn:hover::before {
+      left: 0;
+    }
+    .buy-btn:hover span {
+      color: #c0392b;
     }
 
-    .buy-btn:hover {
-      background: #e74c3c;
-    }
-
-    .back-btn {
-      display: inline-block;
-      margin-top: 20px;
-      color: #333;
-      text-decoration: none;
-      font-size: 1em;
-    }
-
-    .back-btn:hover {
-      text-decoration: underline;
-    }
   </style>
 </head>
 <body>
 
-  <h1>BMW M Power Steering Wheel</h1>
+  <!-- Header -->
+  <header>
+    <a href="vehicles.html" class="back-btn">← Back</a>
+    <h1><a href="index.html" class="home-btn">Acer's Awesome Assets</a></h1>
+    <div style="width:75px;"></div> <!-- spacing placeholder -->
+  </header>
 
+  <!-- Gallery -->
   <div class="gallery">
-    <img src="assets/steering_wheels/BMW_M_POWER.png" alt="BMW M Power Render 1">
-    <!-- Add additional renders here if available -->
+    <img src="assets/steering_wheels/BMW_M_POWER.png" alt="BMW M Power Steering Wheel Render">
+    <!-- Additional renders can be added here -->
   </div>
 
-  <div class="description">
+  <!-- Description -->
+  <section class="description slide-in">
     <p>
-      Upgrade your driving experience with this BMW M Sport steering wheel, expertly crafted 
-      in premium black leather and accented with signature blue stitching for a sporty, luxurious look. 
-      Designed for peak performance, it features contoured ergonomics, 
-      providing you with precise control and unmatched comfort on every journey. 
-      The ideal choice for BMW enthusiasts seeking style, functionality, and enhanced handling. 
-      Fits most BMW M models; diameter approximately 14.5 inches (370 mm).
+      High-quality 3D model of the BMW M Power steering wheel. Fully modeled with precise geometry, clean topology, and high-resolution textures. Perfect for realistic renders, animations, or integration into larger vehicle projects.
     </p>
-  </div>
+    <img src="assets/bmw_logo.png" alt="BMW Logo" class="logo">
+  </section>
 
-  <div class="viewer-container" id="viewer">
-    <img id="wheel-viewer" src="" alt="BMW M Power Steering Wheel 360° Viewer">
-  </div>
-
-  <div class="price">$65</div>
-  <a href="https://www.cgtrader.com/your-steering-wheel-link" target="_blank" class="buy-btn">
-    Buy on CGTrader
-  </a>
-
-  <div>
-    <a href="vehicles.html" class="back-btn">← Back to Vehicles</a>
-  </div>
+  <!-- Buy Button -->
+  <a href="https://www.cgtrader.com/your-steering-wheel-link" class="buy-btn"><span>Buy Wheel</span></a>
 
   <script>
-    const totalFrames = 360; // only if you render the full 360 images
-    const imgElement = document.getElementById('wheel-viewer');
-    const viewerContainer = document.getElementById('viewer');
-    let currentFrame = 1;
-    let isDragging = false;
-    let startX = 0;
-
-    // Show 360 viewer only if the first image exists
-    fetch('assets/steering_wheels/wheel_001.png')
-      .then(res => {
-        if (res.ok) {
-          viewerContainer.style.display = 'block';
-          imgElement.src = 'assets/steering_wheels/wheel_001.png';
+    // Slide-in on scroll
+    const slideElems = document.querySelectorAll('.slide-in');
+    function checkSlide() {
+      const triggerBottom = window.innerHeight * 0.85;
+      slideElems.forEach(elem => {
+        const top = elem.getBoundingClientRect().top;
+        if(top < triggerBottom) {
+          elem.classList.add('visible');
         }
       });
-
-    function updateFrame(frame) {
-      imgElement.src = `assets/steering_wheels/wheel_${String(frame).padStart(3, '0')}.png`;
     }
+    window.addEventListener('scroll', checkSlide);
+    checkSlide();
 
-    imgElement.addEventListener('mousedown', (e) => {
-      isDragging = true;
-      startX = e.pageX;
+    // Gallery flick through (basic scroll with touch/mouse drag)
+    const gallery = document.querySelector('.gallery');
+    let isDown = false;
+    let startX;
+    let scrollLeft;
+
+    gallery.addEventListener('mousedown', (e) => {
+      isDown = true;
+      gallery.classList.add('active');
+      startX = e.pageX - gallery.offsetLeft;
+      scrollLeft = gallery.scrollLeft;
     });
-
-    window.addEventListener('mouseup', () => {
-      isDragging = false;
-    });
-
-    window.addEventListener('mousemove', (e) => {
-      if (!isDragging || !imgElement.src) return;
-      const deltaX = e.pageX - startX;
-      if (Math.abs(deltaX) > 5) {
-        if (deltaX > 0) {
-          currentFrame = (currentFrame % totalFrames) + 1;
-        } else {
-          currentFrame = (currentFrame - 2 + totalFrames) % totalFrames + 1;
-        }
-        updateFrame(currentFrame);
-        startX = e.pageX;
-      }
+    gallery.addEventListener('mouseleave', () => isDown=false);
+    gallery.addEventListener('mouseup', () => isDown=false);
+    gallery.addEventListener('mousemove', (e) => {
+      if(!isDown) return;
+      e.preventDefault();
+      const x = e.pageX - gallery.offsetLeft;
+      const walk = (x - startX) * 2; // scroll-fast
+      gallery.scrollLeft = scrollLeft - walk;
     });
   </script>
 
