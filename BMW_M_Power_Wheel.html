@@ -67,8 +67,8 @@
       margin: 60px auto;
       padding: 0 20px;
       font-weight: 300;
-      font-size: 1.1em;
-      line-height: 1.7em;
+      font-size: 1.5em; /* increased font size */
+      line-height: 1.9em; /* slightly more line spacing */
       position: relative;
     }
     .description img.logo {
@@ -104,9 +104,9 @@
       border-radius: 12px;
       position: relative;
       overflow: hidden;
-      transition: all 0.4s ease;
       cursor: pointer;
       border: 2px solid #c0392b;
+      transition: all 0.4s ease;
     }
     .buy-btn span {
       position: relative;
@@ -127,8 +127,15 @@
     .buy-btn:hover::before {
       left: 0;
     }
-    .buy-btn:hover span {
+    .buy-btn:hover span::after {
+      content: "$65";
       color: #c0392b;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    .buy-btn:hover span {
+      color: transparent; /* hide original text */
     }
 
   </style>
@@ -151,7 +158,12 @@
   <!-- Description -->
   <section class="description slide-in">
     <p>
-      High-quality 3D model of the BMW M Power steering wheel. Fully modeled with precise geometry, clean topology, and high-resolution textures. Perfect for realistic renders, animations, or integration into larger vehicle projects.
+      Upgrade your driving experience with this BMW M Sport steering wheel, expertly crafted 
+      in premium black carbon fibre and accented with signature white stitching for a sporty, luxurious look.
+      Designed for peak performance, it features contoured ergonomics, 
+      providing you with precise control and unmatched comfort on every journey. 
+      The ideal choice for BMW enthusiasts seeking style, functionality, and enhanced handling. 
+      Fits most BMW M models; diameter approximately 14.5 inches (370 mm).
     </p>
     <img src="assets/bmw_logo.png" alt="BMW Logo" class="logo">
   </section>
