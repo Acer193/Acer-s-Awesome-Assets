@@ -8,13 +8,16 @@
       font-family: 'Segoe UI', sans-serif;
       margin: 0;
       padding: 40px;
-      background: #f4f4f4;
-      color: #333;
+      background: #f9f9f9;
+      color: #222;
       text-align: center;
     }
+
     h1 {
       margin-bottom: 20px;
+      font-weight: 600;
     }
+
     .gallery {
       display: flex;
       justify-content: center;
@@ -22,47 +25,62 @@
       flex-wrap: wrap;
       margin-bottom: 30px;
     }
+
     .gallery img {
       max-width: 300px;
       border-radius: 12px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      transition: transform 0.2s;
     }
+
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+
     .description {
       max-width: 800px;
       margin: 0 auto 30px;
       font-size: 1.1em;
       line-height: 1.6;
+      text-align: left;
     }
+
     .viewer-container {
       max-width: 600px;
       margin: 0 auto 40px;
       position: relative;
-      display: none; /* hidden by default */
+      display: none;
     }
+
     .viewer-container img {
       width: 100%;
       border-radius: 12px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.2);
       user-select: none;
     }
+
     .price {
       font-size: 1.5em;
       color: #721c24;
       margin: 20px 0;
     }
+
     .buy-btn {
       display: inline-block;
       background: #c0392b;
       color: white;
-      padding: 12px 24px;
+      padding: 12px 28px;
       border-radius: 8px;
       font-size: 1.1em;
       text-decoration: none;
       transition: background 0.3s;
+      font-weight: 600;
     }
+
     .buy-btn:hover {
       background: #e74c3c;
     }
+
     .back-btn {
       display: inline-block;
       margin-top: 20px;
@@ -70,17 +88,19 @@
       text-decoration: none;
       font-size: 1em;
     }
+
     .back-btn:hover {
       text-decoration: underline;
     }
   </style>
 </head>
 <body>
+
   <h1>BMW M Power Steering Wheel</h1>
 
   <div class="gallery">
     <img src="assets/steering_wheels/BMW_M_POWER.png" alt="BMW M Power Render 1">
-    <!-- Add more renders here if you like -->
+    <!-- Add additional renders here if available -->
   </div>
 
   <div class="description">
@@ -94,7 +114,6 @@
     </p>
   </div>
 
-  <!-- 360° Viewer -->
   <div class="viewer-container" id="viewer">
     <img id="wheel-viewer" src="" alt="BMW M Power Steering Wheel 360° Viewer">
   </div>
@@ -109,15 +128,15 @@
   </div>
 
   <script>
-    const totalFrames = 360; // one per degree if you render them
+    const totalFrames = 360; // only if you render the full 360 images
     const imgElement = document.getElementById('wheel-viewer');
     const viewerContainer = document.getElementById('viewer');
     let currentFrame = 1;
     let isDragging = false;
     let startX = 0;
 
-    // Check if first frame exists before showing viewer
-    fetch(`assets/steering_wheels/wheel_001.png`)
+    // Show 360 viewer only if the first image exists
+    fetch('assets/steering_wheels/wheel_001.png')
       .then(res => {
         if (res.ok) {
           viewerContainer.style.display = 'block';
@@ -152,5 +171,6 @@
       }
     });
   </script>
+
 </body>
 </html>
