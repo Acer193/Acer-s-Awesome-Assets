@@ -2,211 +2,149 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Vehicles - My 3D Assets</title>
+  <title>Vehicles - 3D Assets</title>
   <style>
     body {
+      font-family: 'Segoe UI', sans-serif;
       margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: #f4f4f4;
-      display: flex;
-      height: 100vh;
-    }
-
-    aside {
-      width: 220px;
-      background: #111;
-      color: #fff;
-      display: flex;
-      flex-direction: column;
-      padding-top: 20px;
-    }
-
-    aside h3 {
-      margin-left: 20px;
-      font-size: 1.2em;
-      border-bottom: 1px solid #444;
-      padding-bottom: 5px;
-    }
-
-    aside ul {
-      list-style: none;
       padding: 0;
+      background: #f4f4f4;
+    }
+    .container {
+      display: flex;
+      min-height: 100vh;
+    }
+    .sidebar {
+      width: 250px;
+      background: #222;
+      color: white;
+      padding: 20px;
+    }
+    .sidebar h2 {
+      margin-top: 0;
+    }
+    .sidebar a {
+      color: #ddd;
+      text-decoration: none;
+      display: block;
       margin: 10px 0;
     }
-
-    aside ul li {
-      padding: 10px 20px;
-      cursor: pointer;
-      transition: background 0.2s;
+    .sidebar a:hover {
+      color: white;
     }
-
-    aside ul li:hover {
-      background: #222;
-    }
-
-    aside ul li a {
-      color: #fff;
-      text-decoration: none;
-      display: block;
-    }
-
-    main {
+    .content {
       flex: 1;
-      padding: 40px;
-      overflow-y: auto;
-    }
-
-    .section {
-      margin-bottom: 50px;
       padding: 20px;
-      border-radius: 10px;
     }
-
-    .section.complete-vehicles {
-      background: #dfe6e9;
+    h2, h3 {
+      border-bottom: 2px solid #ccc;
+      padding-bottom: 5px;
     }
-
-    .section.vehicle-accessories {
-      background: #b2bec3;
-    }
-
-    .section h2 {
-      font-size: 2em;
-      margin-bottom: 20px;
-      color: #2d3436;
-      border-bottom: 2px solid #636e72;
-      padding-bottom: 10px;
-    }
-
     .subsection {
-      margin-top: 20px;
+      margin-bottom: 40px;
     }
-
-    .subsection h3 {
-      margin-bottom: 10px;
-      color: #2d3436;
-    }
-
     .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
       gap: 20px;
     }
-
     .grid a {
       display: block;
-      background: #fff;
-      padding: 10px;
-      border-radius: 10px;
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      transition: transform 0.2s;
       text-align: center;
       text-decoration: none;
-      color: #111;
-      font-weight: bold;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-      transition: transform 0.3s, box-shadow 0.3s;
+      color: black;
+      padding-bottom: 10px;
     }
-
-    .grid a img {
+    .grid a:hover {
+      transform: scale(1.03);
+    }
+    .grid img {
       width: 100%;
-      border-radius: 8px;
-      transition: transform 0.3s;
+      height: 150px;
+      object-fit: cover;
     }
-
-    .grid a span {
+    .grid span {
       display: block;
       margin-top: 8px;
-      font-size: 0.9em;
+      font-weight: bold;
     }
-
-    .grid a:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    /* Free / Paid Badges */
+    .badge {
+      margin-top: 8px;
+      padding: 4px 8px;
+      border-radius: 6px;
+      font-size: 0.8em;
+      font-weight: bold;
+      display: inline-block;
     }
-
-    .grid a:hover img {
-      transform: scale(1.05);
+    .free-badge {
+      background: #d4edda;
+      color: #155724;
+    }
+    .paid-badge {
+      background: #f8d7da;
+      color: #721c24;
     }
   </style>
 </head>
 <body>
-  <aside>
-    <h3>Complete Vehicles</h3>
-    <ul>
-      <li><a href="#toyota">Toyota</a></li>
-      <li><a href="#porsche">Porsche</a></li>
-      <li><a href="#ferrari">Ferrari</a></li>
-    </ul>
-
-    <h3>Vehicle Accessories</h3>
-    <ul>
-      <li><a href="#rims">Rims</a></li>
-      <li><a href="#tyres">Tyres</a></li>
-      <li><a href="#spoilers">Spoilers</a></li>
-      <li><a href="#mirrors">Mirrors</a></li>
-      <li><a href="#lights">Lights</a></li>
-      <li><a href="#exhausts">Exhausts</a></li>
-      <li><a href="#interior">Interior Parts</a></li>
-    </ul>
-  </aside>
-
-  <main>
-    <div class="section complete-vehicles" id="complete-vehicles">
-      <h2>Complete Vehicles</h2>
-
-      <div class="subsection" id="toyota">
-        <h3>Toyota</h3>
-      </div>
-
-      <div class="subsection" id="porsche">
-        <h3>Porsche</h3>
-      </div>
-
-      <div class="subsection" id="ferrari">
-        <h3>Ferrari</h3>
-      </div>
+  <div class="container">
+    <div class="sidebar">
+      <h2>Vehicles</h2>
+      <a href="#manufacturers">Complete Vehicles</a>
+      <a href="#accessories">Accessories</a>
+      <a href="index.html">← Back to Home</a>
     </div>
 
-    <div class="section vehicle-accessories" id="vehicle-accessories">
-      <h2>Vehicle Accessories</h2>
+    <div class="content">
+      <h2 id="manufacturers">Complete Vehicles</h2>
+      <div class="subsection">
+        <h3>Honda</h3>
+        <p>(Add Honda vehicles here)</p>
+      </div>
+      <div class="subsection">
+        <h3>Toyota</h3>
+        <p>(Add Toyota vehicles here)</p>
+      </div>
+      <div class="subsection">
+        <h3>BMW</h3>
+        <p>(Add BMW vehicles here)</p>
+      </div>
+
+      <h2 id="accessories">Vehicle Accessories</h2>
 
       <div class="subsection" id="rims">
         <h3>Rims</h3>
         <div class="grid">
-          <a href="https://www.cgtrader.com/your-rpf-link" target="_blank">
+          <a href="assets/rims/RPF_01.png" target="_blank" class="free">
             <img src="assets/rims/RPF_01.png" alt="RPF 01 Rim">
             <span>RPF 01</span>
+            <div class="badge free-badge">Free</div>
           </a>
-          <a href="https://www.cgtrader.com/your-porsche-link" target="_blank">
-            <img src="assets/rims/Porsche_911.png" alt="Porsche 911 Rim">
-            <span>Porsche 911</span>
+          <a href="assets/rims/Porsche_911.png" target="_blank" class="free">
+            <img src="assets/rims/Porsche_911.png" alt="Porsche 911 991 RS Spyder Rim">
+            <span>Porsche 911 991 RS Spyder</span>
+            <div class="badge free-badge">Free</div>
           </a>
         </div>
       </div>
 
-      <div class="subsection" id="tyres">
-        <h3>Tyres</h3>
-      </div>
-
-      <div class="subsection" id="spoilers">
-        <h3>Spoilers</h3>
-      </div>
-
-      <div class="subsection" id="mirrors">
-        <h3>Mirrors</h3>
-      </div>
-
-      <div class="subsection" id="lights">
-        <h3>Lights</h3>
-      </div>
-
-      <div class="subsection" id="exhausts">
-        <h3>Exhausts</h3>
-      </div>
-
-      <div class="subsection" id="interior">
-        <h3>Interior Parts</h3>
+      <div class="subsection" id="steering-wheels">
+        <h3>Steering Wheels</h3>
+        <div class="grid">
+          <a href="BMW_M_Power_Wheel.html" class="paid">
+  <img src="assets/steering_wheels/BMW_M_POWER.png" alt="BMW M Power Steering Wheel">
+  <span>BMW M Power</span>
+  <div class="badge paid-badge">$65</div>            
+          </a>
+        </div>
       </div>
     </div>
-  </main>
+  </div>
 </body>
 </html>
