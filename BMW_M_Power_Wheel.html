@@ -108,61 +108,67 @@
       transform: translateY(0);
     }
 
-    /* Buy Button */
-    .buy-btn {
-      display: block;
-      margin: 225px auto 0px auto;
-      padding: 18px 60px;
-      background: #c0392b;
-      color: white;
-      font-size: 1.3em;
-      font-weight: 500;
-      text-align: center;
-      text-decoration: none;
-      border-radius: 12px;
-      position: relative;
-      overflow: hidden;
-      cursor: pointer;
-      border: 2px solid #c0392b;
-      font-family: 'Objet Light', sans-serif;
-    }
-    .buy-btn span {
-      position: relative;
-      z-index: 2;
-      transition: color 0.2s ease;
-    }
-    .buy-btn::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 100%;
-      background: white;
-      transition: left 0.4s ease;
-      z-index: 1;
-    }
-    .buy-btn::after {
-      content: '$65';
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      color: #c0392b;
-      z-index: 2;
-      font-weight: 500;
-      font-family: 'Objet Light', sans-serif;
-      mix-blend-mode: difference; /* reveals on white overlay */
-    }
-    .buy-btn:hover::before {
-      left: 0;
-    }
-    .buy-btn:hover span {
-      color: transparent; /* original text disappears */
-    }
-  </style>
-</head>
-<body>
+   .buy-btn {
+  display: block;
+  margin: 225px auto 0px auto;
+  padding: 18px 60px;
+  background: #c0392b;
+  color: white;
+  font-size: 1.3em;
+  font-weight: 500;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 12px;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  border: 2px solid #c0392b;
+  font-family: 'Objet Light', sans-serif;
+}
+
+.buy-btn span {
+  position: relative;
+  z-index: 2;
+  transition: color 0.2s ease;
+}
+
+.buy-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: white;
+  transition: left 0.4s ease;
+  z-index: 1;
+}
+
+.buy-btn::after {
+  content: '$65';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: transparent; /* start hidden */
+  z-index: 2;
+  font-weight: 500;
+  font-family: 'Objet Light', sans-serif;
+}
+
+/* Hover state */
+.buy-btn:hover::before {
+  left: 0;
+}
+
+.buy-btn:hover span {
+  color: transparent;
+}
+
+.buy-btn:hover::after {
+  color: #c0392b; /* revealed red text */
+  mix-blend-mode: difference; /* ensures it shows correctly over white */
+}
 
   <!-- Header -->
   <header>
