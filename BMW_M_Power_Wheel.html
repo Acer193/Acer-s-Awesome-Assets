@@ -3,10 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <title>BMW M Power Steering Wheel</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet"> 
-  <!-- Fallback to Roboto if Objet Light not available locally -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
   <style>
-    /* Load Objet Light if you have the font file locally */
+    /* Load Objet Light from local files */
     @font-face {
       font-family: 'Objet Light';
       src: url('fonts/ObjetLight.woff2') format('woff2'),
@@ -73,27 +72,29 @@
       flex-shrink: 0;
     }
 
-    /* Description Section */
+    /* Description */
     .description-container {
       display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
       max-width: 1000px;
       margin: 40px auto;
       padding: 0 20px;
-      align-items: flex-start;
     }
     .description {
       flex: 1;
-      font-weight: 300;
       font-size: 1.5em;
       line-height: 1.9em;
+      font-weight: 300;
+      font-family: 'Objet Light', sans-serif;
       color: #222;
-      font-family: 'Objet Light', 'Roboto', sans-serif;
     }
     .description img.logo {
-      flex-shrink: 0;
       width: 120px;
-      margin-left: 30px;
+      margin-left: 40px;
+      flex-shrink: 0;
       opacity: 0.2;
+      object-fit: contain;
     }
 
     /* Slide-in */
@@ -110,7 +111,7 @@
     /* Buy Button */
     .buy-btn {
       display: block;
-      margin: 200px auto 60px auto; /* moved further down */
+      margin: 200px auto 60px auto;
       padding: 18px 60px;
       background: #c0392b;
       color: white;
@@ -123,12 +124,12 @@
       overflow: hidden;
       cursor: pointer;
       border: 2px solid #c0392b;
-      font-family: 'Objet Light', 'Roboto', sans-serif;
+      font-family: 'Objet Light', sans-serif;
     }
     .buy-btn span {
       position: relative;
       z-index: 2;
-      transition: color 0.4s ease;
+      transition: color 0.2s ease;
     }
     .buy-btn::before {
       content: '';
@@ -147,19 +148,18 @@
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      color: #c0392b; /* red, visible over white overlay */
-      z-index: 0;
+      color: #c0392b;
+      z-index: 2;
       font-weight: 500;
-      font-family: 'Objet Light', 'Roboto', sans-serif;
+      font-family: 'Objet Light', sans-serif;
+      mix-blend-mode: difference; /* reveals on white overlay */
     }
-    /* Hover: text disappears, $65 revealed under overlay */
     .buy-btn:hover::before {
       left: 0;
     }
     .buy-btn:hover span {
-      color: transparent;
+      color: transparent; /* original text disappears */
     }
-
   </style>
 </head>
 <body>
@@ -174,6 +174,7 @@
   <!-- Gallery -->
   <div class="gallery">
     <img src="assets/steering_wheels/BMW_M_POWER.png" alt="BMW M Power Steering Wheel Render">
+    <!-- add more renders here -->
   </div>
 
   <!-- Description -->
@@ -207,7 +208,7 @@
     window.addEventListener('scroll', checkSlide);
     checkSlide();
 
-    // Gallery flick through
+    // Gallery drag scroll
     const gallery = document.querySelector('.gallery');
     let isDown = false;
     let startX;
