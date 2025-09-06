@@ -4,92 +4,64 @@
   <meta charset="UTF-8">
   <title>Vehicles - 3D Assets</title>
   <style>
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #f4f4f4;
-    }
-    .container {
-      display: flex;
-      min-height: 100vh;
-    }
-    .sidebar {
-      width: 250px;
-      background: #222;
-      color: white;
-      padding: 20px;
-    }
-    .sidebar h2 {
-      margin-top: 0;
-    }
-    .sidebar a {
-      color: #ddd;
-      text-decoration: none;
-      display: block;
-      margin: 10px 0;
-    }
-    .sidebar a:hover {
-      color: white;
-    }
-    .content {
-      flex: 1;
-      padding: 20px;
-    }
-    h2, h3 {
-      border-bottom: 2px solid #ccc;
-      padding-bottom: 5px;
-    }
-    .subsection {
-      margin-bottom: 40px;
-    }
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-      gap: 20px;
-    }
+    body { font-family: 'Segoe UI', sans-serif; margin:0; padding:0; background:#f4f4f4; }
+    .container { display:flex; min-height:100vh; }
+    .sidebar { width:250px; background:#222; color:white; padding:20px; }
+    .sidebar h2 { margin-top:0; }
+    .sidebar a { color:#ddd; text-decoration:none; display:block; margin:10px 0; }
+    .sidebar a:hover { color:white; }
+    .content { flex:1; padding:20px; }
+    h2,h3 { border-bottom:2px solid #ccc; padding-bottom:5px; }
+    .subsection { margin-bottom:40px; }
+
+    /* Grid layout */
+    .grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(200px,1fr)); gap:20px; }
+
+    /* Product cards */
     .grid a {
+      position: relative;
       display: block;
       background: white;
       border-radius: 12px;
       overflow: hidden;
       box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-      transition: transform 0.2s;
+      transition: transform 0.3s, box-shadow 0.3s;
       text-align: center;
       text-decoration: none;
       color: black;
       padding-bottom: 10px;
     }
     .grid a:hover {
-      transform: scale(1.03);
+      transform: translateY(-5px);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
     }
+
     .grid img {
       width: 100%;
       height: 150px;
       object-fit: cover;
-    }
-    .grid span {
       display: block;
-      margin-top: 8px;
-      font-weight: bold;
+      transition: filter 0.3s;
     }
-    /* Free / Paid Badges */
+    .grid a:hover img { filter: brightness(95%); }
+
+    .grid span { display:block; margin-top:8px; font-weight:bold; }
+
+    /* Badges top-right */
     .badge {
-      margin-top: 8px;
-      padding: 4px 8px;
-      border-radius: 6px;
-      font-size: 0.8em;
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      padding: 5px 10px;
+      border-radius: 8px;
+      font-size: 0.85em;
       font-weight: bold;
       display: inline-block;
+      z-index: 2;
+      text-align: center;
     }
-    .free-badge {
-      background: #d4edda;
-      color: #155724;
-    }
-    .paid-badge {
-      background: #f8d7da;
-      color: #721c24;
-    }
+    .free-badge { background: #d4edda; color: #155724; }
+    .paid-badge { background: #f8d7da; color: #721c24; }
   </style>
 </head>
 <body>
@@ -118,6 +90,7 @@
 
       <h2 id="accessories">Vehicle Accessories</h2>
 
+      <!-- Rims -->
       <div class="subsection" id="rims">
         <h3>Rims</h3>
         <div class="grid">
@@ -134,16 +107,18 @@
         </div>
       </div>
 
+      <!-- Steering Wheels -->
       <div class="subsection" id="steering-wheels">
         <h3>Steering Wheels</h3>
         <div class="grid">
           <a href="BMW_M_Power_Wheel.html" class="paid">
-  <img src="assets/steering_wheels/BMW_M_POWER.png" alt="BMW M Power Steering Wheel">
-  <span>BMW M Power</span>
-  <div class="badge paid-badge">$65</div>            
+            <img src="assets/steering_wheels/BMW_M_POWER.png" alt="BMW M Power Steering Wheel">
+            <span>BMW M Power</span>
+            <div class="badge paid-badge">$65</div>
           </a>
         </div>
       </div>
+
     </div>
   </div>
 </body>
