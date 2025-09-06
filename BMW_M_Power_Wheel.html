@@ -3,13 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <title>BMW M Power Steering Wheel</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet"> 
+  <!-- Fallback to Roboto if Objet Light not available locally -->
   <style>
     body, html {
       margin: 0;
       padding: 0;
-      font-family: 'Roboto', sans-serif;
+      font-family: 'Objet Light', 'Roboto', sans-serif;
       overflow-x: hidden;
+      background: #fff;
     }
 
     /* Header */
@@ -51,25 +53,28 @@
       scroll-snap-type: x mandatory;
       -webkit-overflow-scrolling: touch;
       width: 100%;
+      height: 50vh; /* half viewport */
     }
     .gallery img {
       width: 100%;
       min-width: 100%;
-      height: auto;
+      height: 100%;
       object-fit: cover;
       scroll-snap-align: start;
       transition: transform 0.3s;
+      flex-shrink: 0;
     }
 
-    /* Description Section */
+    /* Description */
     .description {
       max-width: 900px;
-      margin: 60px auto;
+      margin: 40px auto;
       padding: 0 20px;
       font-weight: 300;
-      font-size: 1.5em; /* increased font size */
-      line-height: 1.9em; /* slightly more line spacing */
+      font-size: 1.5em;
+      line-height: 1.9em;
       position: relative;
+      color: #222;
     }
     .description img.logo {
       position: absolute;
@@ -79,7 +84,7 @@
       opacity: 0.2;
     }
 
-    /* Slide-in effect */
+    /* Slide-in */
     .slide-in {
       opacity: 0;
       transform: translateY(30px);
@@ -97,7 +102,7 @@
       padding: 18px 60px;
       background: #c0392b;
       color: white;
-      font-size: 1.2em;
+      font-size: 1.3em;
       font-weight: 500;
       text-align: center;
       text-decoration: none;
@@ -106,12 +111,12 @@
       overflow: hidden;
       cursor: pointer;
       border: 2px solid #c0392b;
-      transition: all 0.4s ease;
+      font-family: 'Objet Light', 'Roboto', sans-serif;
     }
     .buy-btn span {
       position: relative;
       z-index: 2;
-      transition: all 0.4s ease;
+      transition: color 0.4s ease;
     }
     .buy-btn::before {
       content: '';
@@ -121,21 +126,25 @@
       width: 100%;
       height: 100%;
       background: white;
-      transition: all 0.4s ease;
+      transition: left 0.4s ease;
       z-index: 1;
+    }
+    .buy-btn::after {
+      content: '$65';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: #c0392b;
+      z-index: 0;
+      font-weight: 500;
+      font-family: 'Objet Light', 'Roboto', sans-serif;
     }
     .buy-btn:hover::before {
       left: 0;
     }
-    .buy-btn:hover span::after {
-      content: "$65";
-      color: #c0392b;
-      position: absolute;
-      left: 50%;
-      transform: translateX(-50%);
-    }
     .buy-btn:hover span {
-      color: transparent; /* hide original text */
+      color: transparent;
     }
 
   </style>
@@ -152,7 +161,7 @@
   <!-- Gallery -->
   <div class="gallery">
     <img src="assets/steering_wheels/BMW_M_POWER.png" alt="BMW M Power Steering Wheel Render">
-    <!-- Additional renders can be added here -->
+    <!-- Add more renders here -->
   </div>
 
   <!-- Description -->
@@ -186,7 +195,7 @@
     window.addEventListener('scroll', checkSlide);
     checkSlide();
 
-    // Gallery flick through (basic scroll with touch/mouse drag)
+    // Gallery flick through
     const gallery = document.querySelector('.gallery');
     let isDown = false;
     let startX;
@@ -194,7 +203,6 @@
 
     gallery.addEventListener('mousedown', (e) => {
       isDown = true;
-      gallery.classList.add('active');
       startX = e.pageX - gallery.offsetLeft;
       scrollLeft = gallery.scrollLeft;
     });
@@ -204,7 +212,7 @@
       if(!isDown) return;
       e.preventDefault();
       const x = e.pageX - gallery.offsetLeft;
-      const walk = (x - startX) * 2; // scroll-fast
+      const walk = (x - startX) * 2;
       gallery.scrollLeft = scrollLeft - walk;
     });
   </script>
