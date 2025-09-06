@@ -6,6 +6,15 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet"> 
   <!-- Fallback to Roboto if Objet Light not available locally -->
   <style>
+    /* Load Objet Light if you have the font file locally */
+    @font-face {
+      font-family: 'Objet Light';
+      src: url('fonts/ObjetLight.woff2') format('woff2'),
+           url('fonts/ObjetLight.woff') format('woff');
+      font-weight: 300;
+      font-style: normal;
+    }
+
     body, html {
       margin: 0;
       padding: 0;
@@ -53,7 +62,7 @@
       scroll-snap-type: x mandatory;
       -webkit-overflow-scrolling: touch;
       width: 100%;
-      height: 50vh; /* half viewport */
+      height: 50vh;
     }
     .gallery img {
       width: 100%;
@@ -61,27 +70,29 @@
       height: 100%;
       object-fit: cover;
       scroll-snap-align: start;
-      transition: transform 0.3s;
       flex-shrink: 0;
     }
 
-    /* Description */
-    .description {
-      max-width: 900px;
+    /* Description Section */
+    .description-container {
+      display: flex;
+      max-width: 1000px;
       margin: 40px auto;
       padding: 0 20px;
+      align-items: flex-start;
+    }
+    .description {
+      flex: 1;
       font-weight: 300;
       font-size: 1.5em;
       line-height: 1.9em;
-      position: relative;
       color: #222;
       font-family: 'Objet Light', 'Roboto', sans-serif;
     }
     .description img.logo {
-      position: absolute;
-      right: 0;
-      top: 0;
-      width: 100px;
+      flex-shrink: 0;
+      width: 120px;
+      margin-left: 30px;
       opacity: 0.2;
     }
 
@@ -99,7 +110,7 @@
     /* Buy Button */
     .buy-btn {
       display: block;
-      margin: 120px auto 60px auto; /* moved down further */
+      margin: 200px auto 60px auto; /* moved further down */
       padding: 18px 60px;
       background: #c0392b;
       color: white;
@@ -136,12 +147,12 @@
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      color: #c0392b;
+      color: #c0392b; /* red, visible over white overlay */
       z-index: 0;
       font-weight: 500;
       font-family: 'Objet Light', 'Roboto', sans-serif;
     }
-    /* Hover effect: text disappears, overlay moves, $65 revealed */
+    /* Hover: text disappears, $65 revealed under overlay */
     .buy-btn:hover::before {
       left: 0;
     }
@@ -157,27 +168,26 @@
   <header>
     <a href="vehicles.html" class="back-btn">← Back</a>
     <h1><a href="index.html" class="home-btn">Acer's Awesome Assets</a></h1>
-    <div style="width:75px;"></div> <!-- spacing placeholder -->
+    <div style="width:75px;"></div>
   </header>
 
   <!-- Gallery -->
   <div class="gallery">
     <img src="assets/steering_wheels/BMW_M_POWER.png" alt="BMW M Power Steering Wheel Render">
-    <!-- Add more renders here -->
   </div>
 
   <!-- Description -->
-  <section class="description slide-in">
-    <p>
+  <div class="description-container slide-in">
+    <div class="description">
       Upgrade your driving experience with this BMW M Sport steering wheel, expertly crafted 
       in premium black carbon fibre and accented with signature white stitching for a sporty, luxurious look.
       Designed for peak performance, it features contoured ergonomics, 
       providing you with precise control and unmatched comfort on every journey. 
       The ideal choice for BMW enthusiasts seeking style, functionality, and enhanced handling. 
       Fits most BMW M models; diameter approximately 14.5 inches (370 mm).
-    </p>
+    </div>
     <img src="assets/bmw_logo.png" alt="BMW Logo" class="logo">
-  </section>
+  </div>
 
   <!-- Buy Button -->
   <a href="https://www.cgtrader.com/your-steering-wheel-link" class="buy-btn"><span>Buy Wheel</span></a>
